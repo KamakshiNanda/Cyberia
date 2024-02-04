@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <link rel="shortcut icon" type="image/png" href="favicon.png"/>
+        <!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+        <link rel="shortcut icon" href="img/logo/cyberialogo.png">
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+
+        <!-- Fontawesome -->
+        <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+
+        <!-- Owl Carousel CSS -->
+        <link rel="stylesheet" href="css/owl-carousel/owl.carousel.min.css">
+        <link rel="stylesheet" href="css/owl-carousel/owl.theme.default.min.css">
+
+        <!-- Responsive Tabs CSS -->
+        <link rel="stylesheet" href="css/responsive-tabs/responsive-tabs.min.css">
+
+
+
+        <!-- Custom CSS -->
+
+        <link href="css/style.css" rel="stylesheet" type="text/css"/>
+        <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+        <!-- Responsive CSS -->
+        <link rel="stylesheet" href="css/responsive.css">
+        <link rel="stylesheet" href="plugins/bootstrap-select/css/bootstrap-select.min.css">
+
+
+        <!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+        <link rel="stylesheet" type="text/css" href="font-awesome-4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <script src="recaptchaConfirmation.js" type="text/javascript"></script>
+        <!-- js for google recaptcha -->
+        <script src="https://www.google.com/recaptcha/api.js?render=_reCAPTCHA_site_key"></script>
+        <script src="teamMembers.js"></script>
+        <script src="displayErrorMessage.js"></script>
+        <style>
+
+
+            .pointer {cursor: pointer;}
+
+
+            /* =========================================
+                            Footer
+            ============================================ */
+
+            footer {
+                background: #212226;
+                padding: 30px;
+            }
+
+            footer p {
+                color: #fff;
+                line-height: 20px;
+                margin: 0;
+            }
+
+            footer p span {
+                color: #FF0000;
+            }
+
+
+            /* =========================================
+                            Navigation
+            ============================================ */
+
+            .navbar {
+                position: relative;
+                margin-bottom: 0px;
+                background-color: black;
+                padding: 15px 0 20px 0;
+                -webkit-transition: all 300ms linear;
+                transition: all 300ms linear;
+            }
+
+            .site-nav-wrapper {
+                padding: 0 85px 0 30px;
+            }
+
+            .navbar-brand {
+                padding: 13px 15px;
+            }
+
+            ul.navbar-nav>li>a {
+                font-family: "hacked";
+                color: #fff;
+                font-size: 20px;
+                font-weight: 400;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+            }
+
+            ul.navbar-nav>li>a:hover,
+            ul.navbar-nav>li>a:focus {
+                background: none;
+                color: #FF0000;
+            }
+
+
+            /* White Navigation */
+
+            .white-nav-top {
+                background: black;
+                padding: 20px 0;
+                -webkit-box-shadow: 0 8px 6px -9px #999;
+                box-shadow: 0 8px 6px -9px #999;
+                z-index: 2;
+            }
+
+            .white-nav-top ul.navbar-nav>li>a {
+                color: #212226;
+            }
+
+            .white-nav-top ul.navbar-nav>li>a:hover,
+            .white-nav-top ul.navbar-nav>li>a:focus {
+                color: #FF0000;
+            }
+
+
+            /* Scroll spy active state */
+
+            .white-nav-top ul.navbar-nav>li.active>a {
+                color: #FF0000;
+                font-weight: 500;
+            }
+
+
+            /* web team div */
+
+
+            /* The Modal (background) */
+            .modal {
+                display: none; /* Hidden by default */
+                position: fixed; /* Stay in place */
+                z-index: 1; /* Sit on top */
+                left: 0;
+                top: 0;
+                width: 100%; /* Full width */
+                height: 100%; /* Full height */
+                overflow: auto; /* Enable scroll if needed */
+                background-color: rgb(0,0,0); /* Fallback color */
+                background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+                -webkit-animation-name: fadeIn; /* Fade in the background */
+                -webkit-animation-duration: 0.4s;
+                animation-name: fadeIn;
+                animation-duration: 0.4s
+            }
+
+            /* Modal Content */
+            .modal-content {
+                position: fixed;
+                bottom: 0;
+                background-color: rgba(46, 46, 46, 0.85);
+                width: 100%;
+                -webkit-animation-name: slideIn;
+                -webkit-animation-duration: 0.4s;
+                animation-name: slideIn;
+                animation-duration: 0.4s
+            }
+
+            /* The Close Button */
+            .close {
+                color: white;
+                float: right;
+                font-size: 28px;
+                font-weight: bold;
+            }
+
+            .close:hover,
+            .close:focus {
+                color: red;
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+            .modal-header {
+                margin-top: 10px;
+                border-bottom: 0px;
+                background-color: transparent;
+                color: rgba(255, 0, 0, 0.70);
+            }
+
+            .modal-body {padding: 2px 16px;
+                         margin-top: 10px;
+                         margin-bottom: 20px;
+            }
+
+            .modal-footer {
+                padding: 2px 16px;
+                background-color: #555;
+                color: white;
+            }
+            .proimg{float: right;}
+            .proname{float: left;
+                     margin-left: 20px;}
+            /* Add Animation */
+            @-webkit-keyframes slideIn {
+                from {bottom: -300px; opacity: 0} 
+                to {bottom: 0; opacity: 1}
+            }
+
+            @keyframes slideIn {
+                from {bottom: -300px; opacity: 0}
+                to {bottom: 0; opacity: 1}
+            }
+
+            @-webkit-keyframes fadeIn {
+                from {opacity: 0} 
+                to {opacity: 1}
+            }
+
+            @keyframes fadeIn {
+                from {opacity: 0} 
+                to {opacity: 1}
+            }
+
+
+
+
+            .fa-2x {
+                font-size: 2em !important;
+            }
+
+
+
+            .fa:hover{
+                color:red;
+            }
+
+            body{
+                /*background-image:url("cyberia_mainposter.jpg");*/
+                height: 100vh;
+            }
+            .form-control{
+                border-top:transparent;
+                border-right:transparent;
+                border-bottom-color:black;
+                border-left:transparent;
+                /*width:350px;*/
+                border-radius:5px;
+                color:white;
+                margin-top:15px;
+                background-color: #000;
+                font-family: inherit !important;
+                text-decoration:none;
+                box-shadow: 3px 3px 12px #393333;
+            }
+            .form-control:hover{
+                box-shadow:0px 2px 2px red;
+            }
+            #main{
+                padding:10px 10px 15px 10px;
+                width:400px;
+                background-color: rgba(0, 0, 0, 0.5);
+                border:1px solid;
+                margin-top:0%;
+                border-radius:10px;
+
+                box-shadow: 0px 0px 12px 3px #840e0b;
+            }
+            .radio-inline{
+                font-size:20px;
+                color:white;
+                padding-left:20px;
+            }
+            h2{
+                font-size:35px;
+                font-family:Candara;
+                color:white;
+            }
+            .btn{
+                width:150px;
+                color: #000000;
+                font-family:Candara;
+                font-size:25px;
+                border:none;
+                margin-top:5px;
+                -webkit-transition-duration: 0.4s; /* Safari */
+                transition-duration: 0.4s;
+                text-decoration: none;
+                overflow: hidden;
+                cursor: pointer;
+                border-radius:50px;
+                background-color:red;
+                opacity:0.8;
+            }
+            .btn:hover{
+                transition-duration:0.7s;
+                font-size:25px;
+                border-radius:50px;
+                background-color:red;
+                box-shadow: 4px 4px 10px #f5f5f5;
+                color:#ffffff;
+            }
+
+            .line{
+                margin-left: 5%;
+            }
+
+
+            @media only screen and (max-width: 1024px) {
+                #main{
+                    margin: 2%;
+                    padding: 15px;
+                    width:329px;
+                }
+                .close{
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    color: red;
+                    font-size: 35px;
+                    font-weight: bold;
+                }
+            }
+
+
+            .wrap-login100 {
+                width: 500px;
+                background: #fff;
+                border-radius: 10px;
+                position: relative;
+            }
+            .container-login100 {
+
+                background-image:url("./img/Group1.png");
+                background-repeat: no-repeat;
+                background-size: cover;
+                min-height: 100%;
+                display: -webkit-box;
+                display: -webkit-flex;
+                display: -moz-box;
+                display: -ms-flexbox;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                padding: 15px;
+
+            }
+
+            @media (max-width: 576px) {
+                .wrap-login100 {
+                    padding-left: 15px;
+                    padding-right: 15px;
+                }
+
+                boby{
+                    width:100vw;
+                    height: 100vh;
+
+                }
+
+                .line{margin-left: -15px;}
+
+                .container-login100{
+                    min-height: 100%;
+
+                }
+                .proimg{float: unset;}
+                .proname{float: unset;}
+            }
+
+            * {
+                margin: 0px; 
+                padding: 0px; 
+                box-sizing: border-box;
+            }
+
+            .limiter {
+
+                width: 100%;
+                margin: 0 auto;
+            }
+
+
+            @media (max-width: 767px){
+                .navbar-brand img {
+                    margin-left: -70px !important;
+                    width: 180px;
+                    height: 65px;
+                    margin-top: -20px;
+                }
+
+                #mobile-nav-open-btn {
+                    display: block;
+                    margin-right: -85px !important;
+                    margin-top: 10px;
+                }
+            }
+
+
+        </style>
+        <script src="displayErrorMessage.js"></script>
+    </head>
+    <body onload="addTF()">
+
+
+        <header>
+            <nav class="navbar navbar-fixed-top">
+                <div class="container-fluid">
+                    <div class="site-nav-wrapper">
+
+                        <div class="navbar-header">
+
+                            <!-- Mobile Menu Open Button -->
+                            <span id="mobile-nav-open-btn">&#9776;</span>
+
+                            <!-- Logo -->
+                            <a class="navbar-brand" href="index.html">
+                                <img src="img/logo/logo.png" alt="logo" height="65px" width="180px" style="margin-top:-20px;">
+                            </a>
+                        </div>
+
+                        <!-- Main Menu -->
+                        <div class="container">
+                            <div class="collapse navbar-collapse">
+                                <ul class="nav navbar-nav pull-right">
+                                    <li><a href="index.html#home"><b style="font-family: 'Poppins', sans-serif;">Home</b></a></li>
+                                    <li><a href="index.html#about"><b style="font-family: 'Poppins', sans-serif;">About</b></a></li>
+                                    <li><a href="index.html#schedule"><b style="font-family: 'Poppins', sans-serif;">Timeline</b></a></li>
+                                    <li><a href="index.html#speakers"><b style="font-family: 'Poppins', sans-serif;">Events</b></a></li>
+                                    <li><a href="index.html#sponsors"><b style="font-family: 'Poppins', sans-serif;">Sponsors</b></a></li>
+                                    <li><a href="index.html#contact"><b style="font-family: 'Poppins', sans-serif;">Contact</b></a></li>
+                                    <li><a href="registration_form.html"><b style="font-family: 'Poppins', sans-serif;">Register</b></a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Mobile Menu -->
+                        <div id="mobile-nav">
+                            <!-- Mobile Menu Close Button -->
+                            <span id="mobile-nav-close-btn">&times;</span>
+
+                            <div id="mobile-nav-content">
+                                <ul class="nav">
+
+                                    <li><a href="index.html#home"><b style="font-family: 'Poppins', sans-serif;">Home</b></a></li>
+                                    <li><a href="index.html#about"><b style="font-family: 'Poppins', sans-serif;">About</b></a></li>
+                                    <li><a href="index.html#schedule"><b style="font-family: 'Poppins', sans-serif;">Timeline</b></a></li>
+                                    <li><a href="index.html#speakers"><b style="font-family: 'Poppins', sans-serif;">Events</b></a></li>
+                                    <li><a href="index.html#sponsors"><b style="font-family: 'Poppins', sans-serif;">Sponsors</b></a></li>
+                                    <li><a href="index.html#contact"><b style="font-family: 'Poppins', sans-serif;">Contact</b></a></li>
+                                    <li><a href="registration_form.html"><b style="font-family: 'Poppins', sans-serif;">Register</b></a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+
+
+        <div class="limiter">
+            <div class="container-login100">
+                <div class="wrap-login100" id="main">
+
+                    <center><p id="displayError" style="display: none;color:red;"></p></center>
+                    <center><h2><b>REGISTRATION</b></h2></center>
+                    <form action="RegistrationHandler" id="regForm" method="post" onsubmit="return checkEvent()">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="first_name" id="first_name" placeholder="First Name" required/>				
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="middle_name" id="middle_name" placeholder="Middle Name"/>
+
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="last_name" id="last_name" placeholder="Last Name" required/>
+
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="institute" id="institute" placeholder="Institute or school" required/>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" name="email" id="email" placeholder="E-mail" required/>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="mobno" id="mobno" placeholder="Mobile Number" minlength="10" maxlength="10" required/>
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control" id="event" name="event" style="background-color:black;" onchange="addTF()" >
+                                <option value="0" disabled selected>Select event</option>
+                                <optgroup label="Technical">
+                                    <option value="BTV" >Bang The Virus</option>
+                                    <option value="COP">Crack O Pattern</option>
+                                    <option value="CG">Codography</option>
+                                    <option value="JC">Jumbled Coding</option>
+                                    <option value="HA">Hackathon</option>
+                                    <option value="CH">Cyber Hunt</option>
+                                    <option value="EX">Exquizite</option>
+                                    <option value="PA">Pixel Art</option>
+                                </optgroup>
+                                <optgroup label="Non Technical">
+                                    <option value="VWC">Virtual War: Counter Strike</option>
+                                   <!-- <option value="VWP">Virtual War: PUBG</option> -->
+                                    <option value="VWN">Virtual War: Need For Speed</option>
+                                    <option value="VWCG">Virtual War: CSGO</option>
+                                    <option value="WDV">Web Da Vinci</option>
+                                    <option value="EP">Extempore</option>
+                                    <option value="MF">Magnum Focus</option>
+                                    <option value="TH">Techtonic Hunt</option>
+                                    <option value="TKT">The Knights Tour</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                        <div class="form-group" id="pubgdiv" style="display: none;" >
+                            <br/><center>
+                                <label class="radio-inline" for="ps" >Solo </label>
+                                <input type="radio" name="pubg" id="ps" value="solo" onchange="addTMP()" required />
+                                <label class="radio-inline" for="pd"> Duo</label>
+                                <input type="radio" id="pd" name="pubg" onchange="addTMP()" value="duo" />
+                                <label class="radio-inline" for="psq"> Squad</label>
+                                <input type="radio" id="psq" name="pubg" value="squad" onchange="addTMP()" />
+                            </center>
+                        </div>
+                        <div class="form-group" style="display:none;" id="tm1">
+                            <input type="text" class="form-control" id="tmn1" name="tmn1" placeholder="Name(2nd Team member)" />
+                        </div>
+                        <div class="form-group" style="display:none;" id="tm2">
+                            <input type="text" class="form-control" id="tmn2" name="tmn2" placeholder="Name(3rd Team member)" />
+                        </div>
+                        <div class="form-group" style="display:none;" id="tm3">
+                            <input type="text" class="form-control" id="tmn3" name="tmn3" placeholder="Name(4th Team member)" />
+                        </div>
+                        <div class="form-group" style="display:none;" id="tm0">
+                            <input type="text" class="form-control" id="tmn0" name="tmn0" placeholder="Name(5th Team member)" />
+                        </div>
+                        <div class="form-group" style="display:none;" id="tm4">
+                            <input type="text" class="form-control" id="tmn4" name="chessID" placeholder="FIDE ID (Optional)" />
+                        </div>
+                        <div class="form-group" style="display:none;" id="tm5">
+                            <input type="text" class="form-control" id="tmn5" name="chessRank" placeholder="FIDE Rank (Optional)" />
+                        </div>
+                        <br>
+                        <div class="form-group line" onclick="addTM()">
+                            <label class="radio-inline" for="rb1">School level </label>
+                            <input type="radio" name="level" id="rb1" value="school" required />
+                            <label class="radio-inline" for="rb2"> College level</label>
+                            <input type="radio" id="rb2" name="level" value="college" />
+                            <br><br>
+                        </div>
+                        <center>
+                            <div class="g-recaptcha" style="margin-bottom:10px;" data-theme="dark" data-sitekey="6Ldd1L4UAAAAAEydDlTXMnO9_si61LC7zBHZWntM"></div><!--server-->
+                            <!--<div class="g-recaptcha" style="margin-bottom:10px;" data-theme="dark" data-sitekey="6LcWsb4UAAAAABO4CWi5BrAgDHbbRMmP0iobnWgr" ></div>--><!-- localhost -->
+                            <div id="g-recaptcha-error"></div>
+                        </center>
+                        <div class="form-group" style="margin-left:30%"><input type="button" class="btn" Value="Submit" onclick="sendSignInfo();"/>
+                            <input style="display: none;" type="submit" class="btn" Value="Submit" id="sub"/>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <!-- container -->
+            <div class="container">
+                <!-- row -->
+                <div class="row">
+
+                    <!-- footer logo -->
+                    <div class="col-md-4 col-md-push-4">
+                        <div class="footer-brand">
+                            <a class="logo" href="index.html">
+                                <img class="logo-img" src="./img/logo-alt.png" alt="logo">
+                            </a>
+                        </div>
+                    </div>
+                    <!-- /footer logo -->
+
+                    <!-- contact social -->
+                    <div class="col-md-4 col-md-push-4">
+                        <div class="contact-social">
+                            <a href="https://www.facebook.com/cyberia.msubaroda/"><i class="fa fa-facebook"></i></a>
+
+
+                            <a href="https://www.instagram.com/cyberia2019/" target="_Blank"><i class="fa fa-instagram"></i></a>
+
+                        </div>
+                    </div>
+                    <!-- /contact social -->
+
+                    <!-- copyright -->
+                    <div class="col-md-4 col-md-pull-8">
+                        <span class="copyright" style="color:#ffffff;">
+                            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved    |  Website Developed by <a class="pointer" id="myBtn">Web Team Cyberia 2019</a>
+                        </span>
+                    </div>
+                    <!-- /copyright -->
+
+                </div>
+                <!-- /row -->
+
+
+                <!-- Trigger/Open The Modal -->
+
+
+<!--                 The Modal <center>
+                    <div id="myModal" class="modal">
+
+                         Modal content 
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <span class="close">&times;</span>
+                                <h2>Web Team Cyberia 2019</h2>
+                            </div>
+                            <div class="modal-body">
+                                <div style="display: inline-flex;width: 100%; margin-bottom: 10px;">
+                                    <div  style="width: 50%;">
+                                        <a href="https://www.instagram.com/cactus.30/"><img class="proimg" src="https://lh3.googleusercontent.com/VoyCbVpi9v34YWkRxNvIR3CxlI900QDJOk8EGnG6NnZoY0Nzg4Ot70P4QyTbiiJe6FwMHq8347a50W6ztR3pZnVvn3uLPTp_t0gXkVuPgswxH06zOsTK-K-bIEfSTuKOHFWdeL9l6g=s300-p-k" alt="" width="100" height="100"></a></div>
+                                    <div  class="proname" style="width: 50%;margin-top: auto;margin-bottom: auto;"> 
+                                        <a class="proname" href="https://www.instagram.com/cactus.30/" style="color:white;"><h3>Yash Shah</h3></a>
+                                    </div>
+                                </div>
+                                <div style="display: inline-flex;width: 100%; margin-bottom: 10px;">
+                                    <div style="width: 50%;">
+                                        <a href="https://www.instagram.com/heetkalaria/"><img class="proimg" src="https://lh3.googleusercontent.com/xzOAD6KtVQXxYcp4Oxxneca2zCmyWaXl2pDjMGHmbEduT3f2uK479wJuk25Lh4AjBaEATjBo2CsgJX8QjZW_8Iy4Y_upuT4kFjZQ0LiSn3CB_-U0FsxkJRUE_KDRhZn9ydvFvjw7BA=s300-p-k" alt="" width="100" height="100"></a></div>
+                                    <div class="proname" style="width: 50%;margin-top: auto;margin-bottom: auto;"> 
+                                        <a class="proname" href="https://www.instagram.com/heetkalaria/" style="color:white;"><h3>Heet Kalaria</h3></a>
+                                    </div>
+                                </div>
+                                <div style="display: inline-flex;width: 100%; margin-bottom: 10px;">
+                                    <div style="width: 50%;">
+                                        <a href="https://www.instagram.com/akshinanda/"><img class="proimg" src="https://lh3.googleusercontent.com/CrQ1k0ojAUmu1qruGdH9LknGUDB4yLmxaUcdqyFzOYrUdel_miKLZQl8XNf-93XJ6lutnalGr_NTbvksu5HNTPypxXkeL_6GL2p65A_dW5HXFflyTGIm8KAYhhyTRzsJrHOX3Fd8xQ=s300-p-k" alt="" width="100" height="100"></a></div>
+                                    <div class="proname" style="width: 50%;margin-top: auto;margin-bottom: auto;"> 
+                                        <a class="proname" href="https://www.instagram.com/akshinanda/" style="color:white;"><h3>Kamakshi Nanda</h3></a>
+                                    </div>
+                                </div>
+                                <div style="display: inline-flex;width: 100%; margin-bottom: 10px;">
+                                    <div style="width: 50%;">
+                                        <a href="https://www.instagram.com/harshit_147/"><img class="proimg" src="https://lh3.googleusercontent.com/qD-bFlglYdvU1YlFnLM0atuXpwz9KpKOVQwjLagUIplzm74XEDDFGMrwMzgvIj1AMhLxAmIoN5qa_Y-j_s30ZZupxqqmAaqoGWRnR9J5jOKJWd2Ggmv2Y8nlGPVfodiehfM8GRVOog=s300-p-k" alt="" width="100" height="100"></a></div>
+                                    <div class="proname" style="width: 50%;margin-top: auto;margin-bottom: auto;"> 
+                                        <a class="proname" href="https://www.instagram.com/harshit_147/" style="color:white;"><h3>Harshit Chandani</h3></a>
+                                    </div>
+                                </div> 
+                            </div>
+
+                        </div>
+
+                    </div></center>-->
+
+                <script>
+                    // Get the modal
+                    var modal = document.getElementById("myModal");
+
+                    // Get the button that opens the modal
+                    var btn = document.getElementById("myBtn");
+
+                    // Get the <span> element that closes the modal
+                    var span = document.getElementsByClassName("close")[0];
+
+                    // When the user clicks the button, open the modal 
+                    btn.onclick = function () {
+                        modal.style.display = "block";
+                    }
+
+                    // When the user clicks on <span> (x), close the modal
+                    span.onclick = function () {
+                        modal.style.display = "none";
+                    }
+
+                    // When the user clicks anywhere outside of the modal, close it
+                    window.onclick = function (event) {
+                        if (event.target == modal) {
+                            modal.style.display = "none";
+                        }
+                    }
+                </script>
+            </div>
+            <!-- /container -->
+        </footer>
+        <!-- /Footer -->
+
+        <script>
+
+
+            function checkCap()
+            {
+                var response = grecaptcha.getResponse();
+                console.log(response);
+                if (response.length == 0) {
+                    document.getElementById('g-recaptcha-error').innerHTML = '<span style="color:red;">Recaptcha is required.</span>';
+                    return false;
+                }
+                else
+                {
+                    document.getElementById("sub").click();
+                }
+                return true;
+                //sendSignInf(response);
+                //console.log(response);
+            }
+            function sendSignInf(response)
+            {
+                if (window.XMLHttpRequest)
+                {
+                    request = new XMLHttpRequest();
+                } else if (window.ActiveXObject)
+                {
+                    request = new ActiveXObject("Microsoft.XMLHTTP");
+                    alert("ActiveXObject object created");
+                }
+                try
+                {
+                    request.onreadystatechange = getSignInf;
+                    request.open("POST", "RegistrationHandler", true);
+                    request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                    console.log("response:" + response);
+                    request.send("response=" + response);
+                } catch (e)
+                {
+                    alert("Unable to connect to server." + e);
+                }
+            }
+            function getSignInf()
+            {
+                console.log("getsignin called" + request.readyState);
+                if (request.readyState == 4)
+                {
+                    var text = request.responseText;
+                    console.log(text);
+                    var obj = JSON.parse(text);
+                    console.log("true");
+                    console.log(obj);
+                    if (obj.success == true)
+                    {
+                        document.getElementById('g-recaptcha-error').innerHTML = '<span style="color:white;">correct recaptcha.</span>';
+                        console.log("true");
+                        document.getElementById("sub").click();
+                        //document.getElementById("displayError").style.display="block";
+                    } else
+                    {
+                        //alert("we are submitting the form"); 
+                        document.getElementById('g-recaptcha-error').innerHTML = '<span style="color:red;">wrong recaptcha.</span>';
+                        console.log("false");
+                        //document.getElementById("sub").click();
+                    }
+                }
+            }
+        </script>
+
+
+
+
+        <!-- JQuery -->
+        <script src="js/jquery.min.js"></script>
+
+        <!-- Bootstrap JS -->
+        <script src="js/bootstrap/bootstrap.min.js"></script>
+
+        <!-- Owl Carousel JS -->
+        <script src="js/owl-carousel/owl.carousel.min.js"></script>
+
+        <!-- Waypoints -->
+        <script src="js/waypoints/jquery.waypoints.min.js"></script>
+
+        <!-- Responsive Tabs JS -->
+        <script src="js/responsive-tabs/jquery.responsiveTabs.min.js"></script>
+
+        <!-- Isotope -->
+        <script src="js/isotope/isotope.pkgd.min.js"></script>
+
+        <!-- Magnific Popup -->
+        <script src="js/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+        <!-- Counter -->
+        <script src="js/counter/jquery.counterup.min.js"></script>
+
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9EdV2JfPG1Vfviw9gf_HlblIUfs7Ie2E"></script>
+        <!-- Google Map JS -->
+        <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9EdV2JfPG1Vfviw9gf_HlblIUfs7Ie2E"></script> -->
+
+        <!-- Easing -->
+        <script src="js/easing/jquery.easing.1.3.min.js"></script>
+
+        <!-- WOW JS -->
+        <script src="js/wow/wow.min.js"></script>
+        <script src="js/jquery.validate.js"></script>
+        <!-- Custom JS -->
+        <script src="js/script.js"></script>
+        <script src="plugins/bootstrap-select/js/bootstrap-select.min.js"></script>
+

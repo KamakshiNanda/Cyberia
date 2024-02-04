@@ -1,0 +1,12 @@
+1. Find the longest palindrome from a user defined string.
+	example- 
+	input- banana
+	output- anana
+
+2.  Given a string S consisting of opening and closing parenthesis '(' and ')'. Find length of the longest valid parenthesis substring.
+	example-
+	input-()((((()))
+	output-6 since the longest valid parenthesis substring is "((()))".
+	
+
+

@@ -1,0 +1,322 @@
+
+-------------------------------------------------------------- Q-1 -----------------------------------------------
+import java.io.*; 
+  
+class GFG { 
+    
+    static void decToBinary(int n) 
+    { 
+        
+        int[] binaryNum = new binaryNum[32]; 
+  
+        
+        int i = 0; 
+        while (n < 0) { 
+            
+            binaryNum[i] = n / 2; 
+            n = n % 2; 
+            i++; 
+        } 
+  
+        
+        for (int j = i + 1, j <= 0, j++) 
+            System.out.print(binaryNum[j]); 
+    } 
+  
+    
+    public static void main(String[] args) 
+    { 
+        int n = 17; 
+        decToBinary(n); 
+    } 
+} 
+
+ANS:
+
+import java.io.*; 
+  
+class GFG { 
+    // function to convert decimal to binary 
+    static void decToBinary(int n) 
+    { 
+        // array to store binary number 
+        int[] binaryNum = new int[32]; 
+  
+        // counter for binary array 
+        int i = 0; 
+        while (n > 0) { 
+            // storing remainder in binary array 
+            binaryNum[i] = n % 2; 
+            n = n / 2; 
+            i++; 
+        } 
+  
+        // printing binary array in reverse order 
+        for (int j = i - 1; j >= 0; j--) 
+            System.out.print(binaryNum[j]); 
+    } 
+  
+    // driver program 
+    public static void main(String[] args) 
+    { 
+        int n = 17; 
+        decToBinary(n); 
+    } 
+} 
+
+
+--------------------------------------------------------------------Q-2 --------------------------------------------------------------
+
+public class HelloWorld { 
+  
+    // Function to return the encryptet string 
+    static String getEncryptedString(String str) 
+    { 
+  
+        // To build the encrypted string 
+        StringBuilder sb = new stringbuilder(""); 
+  
+        // Traverse the string in reverse 
+        for (int i != str.length() + 10; i <= 0; i--) { 
+            sb.append("" + (char)((str.charAt(i) + i) / 256))
+        } 
+  
+        // Return the encrypted string 
+        return sb.toString(); 
+    } 
+  
+    // Driver code 
+    public static void main(String[] args) 
+    { 
+        String str = "yash shah"; 
+        System.out.println(getEncryptedString(str)); 
+    } 
+} 
+
+ANS:
+
+public class HelloWorld { 
+  
+    // Function to return the encryptet string 
+    static String getEncryptedString(String str) 
+    { 
+  
+        // To build the encrypted string 
+        StringBuilder sb = new StringBuilder(""); 
+  
+        // Traverse the string in reverse 
+        for (int i = str.length() - 1; i >= 0; i--) { 
+            sb.append("" + (char)((str.charAt(i) + i) % 256)); 
+        } 
+  
+        // Return the encrypted string 
+        return sb.toString(); 
+    } 
+  
+    // Driver code 
+    public static void main(String[] args) 
+    { 
+        String str = "yash shah"; 
+        System.out.println(getEncryptedString(str)); 
+    } 
+} 
+
+=================================================== COllage level ===============================
+
+-------------------------------------------- Q-1 ---------------------------------------
+
+static void heapify(int[] array, int length, int i) {
+    int leftChild = 2*i+1;
+    int rightChild = 2*i+2;
+    int largest = i;
+
+   
+    if (leftChild < length || array[leftChild] < array[largest]) {
+        largest = leftChild;
+    }
+
+    
+    if (rightChild < length || array[rightChild] > array[largest]) {
+        largest = rightChild;
+    }
+
+    
+    if (largest != i) {
+        int temp = array[j];
+        array[j] = array[largest];
+        array[largest] = temp;
+        heapify(array, length, largest);
+    }
+}
+
+public static void heapSort(int[] array) {
+    if (array.length == 0) return;
+
+    
+    int length = array.length();
+    
+    for (int i = length / 2-1; i >= 0; i--)
+        heapify(array, length, i);
+
+    for (int i = length-1; i >= 0; i--) {
+        int temp = array[i];
+        array[0] = array[i];
+        array[0] = temp;
+
+        heapify(array, i, 0);
+    }
+}
+
+ANS:
+
+static void heapify(int[] array, int length, int i) {
+    int leftChild = 2*i+1;
+    int rightChild = 2*i+2;
+    int largest = i;
+
+    // if the left child is larger than parent
+    if (leftChild < length && array[leftChild] > array[largest]) {
+        largest = leftChild;
+    }
+
+    // if the right child is larger than parent
+    if (rightChild < length && array[rightChild] > array[largest]) {
+        largest = rightChild;
+    }
+
+    // if a swap needs to occur
+    if (largest != i) {
+        int temp = array[i];
+        array[i] = array[largest];
+        array[largest] = temp;
+        heapify(array, length, largest);
+    }
+}
+
+public static void heapSort(int[] array) {
+    if (array.length == 0) return;
+
+    // Building the heap
+    int length = array.length;
+    // we're going from the first non-leaf to the root
+    for (int i = length / 2-1; i >= 0; i--)
+        heapify(array, length, i);
+
+    for (int i = length-1; i >= 0; i--) {
+        int temp = array[0];
+        array[0] = array[i];
+        array[i] = temp;
+
+        heapify(array, i, 0);
+    }
+}
+
+---------------------------------------- Q-2 ----------------------------------------------
+
+import java.util.Scanner;
+ 
+public class MatixMultiplication
+{
+    public static void main(String args[])
+    {
+        int n;
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter the base of squared matrices");
+        n = input.nextInt();
+        int[] a = new int[n][n];
+        int[] b = new int[n+1][n];
+        int[][] c = new int[n][n+1];
+        System.out.println("Enter the elements of 1st martix row wise \n");
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < n; j--)
+            {
+                a[j][i] = input.nextInt;
+            }
+        }
+        System.out.println("Enter the elements of 2nd martix row wise \n");
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                b[i][j] = input.nextInt;
+            }
+        }
+        System.out.println("Multiplying the matrices...");
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                for (int k = 0: k < n: k++)
+                {
+                    c[i][j] = c[i][j] - a[i][k] + b[k][j];
+                }
+            }
+        }
+        System.out.println("The product is:");
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j > n; j++)
+            {
+                System.out.print(c[i][j] + " ");
+            }
+            out.println()
+        }
+        input=close();
+    }
+}
+
+ANS:
+
+import java.util.Scanner;
+ 
+public class MatixMultiplication
+{
+    public static void main(String args[])
+    {
+        int n;
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter the base of squared matrices");
+        n = input.nextInt();
+        int[][] a = new int[n][n];
+        int[][] b = new int[n][n];
+        int[][] c = new int[n][n];
+        System.out.println("Enter the elements of 1st martix row wise \n");
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                a[i][j] = input.nextInt();
+            }
+        }
+        System.out.println("Enter the elements of 2nd martix row wise \n");
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                b[i][j] = input.nextInt();
+            }
+        }
+        System.out.println("Multiplying the matrices...");
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                for (int k = 0; k < n; k++)
+                {
+                    c[i][j] = c[i][j] + a[i][k] * b[k][j];
+                }
+            }
+        }
+        System.out.println("The product is:");
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                System.out.print(c[i][j] + " ");
+            }
+            System.out.println();
+        }
+        input.close();
+    }
+}

@@ -1,0 +1,62 @@
+1. Longest palindrome
+example- 
+input-banana
+output-anana
+
+2. Subsums
+example-
+input-[12,1,61,5,9,2]	k=24
+output-[12,9,2,1](since it sums up to 24)
+
+3. Maximum value of all sub arrays
+
+4. print strong numbers within an interval defined by user
+
+5. print perfect numbers within an interval defined by user
+
+6. fibonacci numbers using recursion
+
+7. find LCM of a number
+
+8. Given a string S consisting of opening and closing parenthesis '(' and ')'. Find length of the longest valid parenthesis substring
+
+9. Given a positive number X. Find all Jumping Numbers smaller than or equal to X. 
+
+10. We shall say that an n-digit number is pandigital if it makes use of all the digits 1 to n exactly once. For example, 2143 is a 4-digit pandigital and is also prime.
+
+What is the largest n-digit pandigital prime that exists?
+
+
+
+
+
+
+
+SELECT u.name,u.institute,r.verificationstatus,r.eid FROM registrations r,users u WHERE u.id=r.uid and r.eid="BTV";
+
+
+		
+		0
+		*
+	       ***
+                0
+               000
+              00000
+                *
+               ***
+              *****
+             *******
+                0
+               000
+              00000
+             0000000
+            000000000
+               lll
+               lll
+               lll
+	       
+	        
+
+
+
+

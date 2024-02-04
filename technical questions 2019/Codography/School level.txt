@@ -1,0 +1,7 @@
+1. Print strong numbers(A strong number is the one whose sum of factorials of each digit results to the same number) within an interval defined by user.
+	example-145 is a strong number since, 1!+4!+5!=145.
+
+2. Subsums
+	example-
+	input-[12,1,61,5,9,2]	k=24
+	output-[12,9,2,1](since it sums up to 24)
